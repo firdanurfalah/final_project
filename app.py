@@ -23,10 +23,7 @@ def prediction(DAYS_EMPLOYED, CODE_GENDER, CNT_CHILDREN, FLAG_OWN_CAR, AMT_INCOM
     else:
         CODE_GENDER = False
         
-    if CNT_CHILDREN <="3":
-        CNT_CHILDREN = True
-    else:
-        CNT_CHILDREN = False
+    CNT_CHILDREN = CNT_CHILDREN
  
     if (FLAG_OWN_CAR == "1" or FLAG_OWN_CAR == "0"):
         FLAG_OWN_CAR = True
@@ -74,7 +71,7 @@ def main():
       
     # when 'Predict' is clicked, make the prediction and store it 
     if st.button("Predict"): 
-        result = prediction(DAYS_EMPLOYED,CODE_GENDER, NAME_FAMILY_STATUS, FLAG_OWN_CAR, AMT_INCOME_TOTAL, AMT_CREDIT) 
+        result = prediction(DAYS_EMPLOYED,CODE_GENDER, CNT_CHILDREN, FLAG_OWN_CAR, AMT_INCOME_TOTAL, AMT_CREDIT) 
         st.success('Pinjaman anda {}'.format(result))
         print(AMT_CREDIT)
      
